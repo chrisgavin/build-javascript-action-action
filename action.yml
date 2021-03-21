@@ -1,0 +1,33 @@
+name: Build JavaScript Action Action
+description: A GitHub Action for building transpiled JavaScript GitHub Actions.
+runs:
+  using: node12
+  main: ./bootstrap-shim.js
+inputs:
+  github-token:
+    description: A GitHub access token for the current repository.
+    required: true
+    default: ${{ github.token }}
+  github-repository:
+    description: The name of the current repository.
+    required: true
+    default: ${{ github.repository }}
+  bootstrap-command:
+    description: The command to run to build the production version of the project.
+    required: true
+    default: npm run bootstrap
+  commit-author-name:
+    description: The author name of the commit with the built code.
+    required: true
+    default: GitHub Actions
+  commit-author-email:
+    description: The author email address of the commit with the built code.
+    required: true
+    default: actions@users.noreply.github.com
+  commit-message:
+    description: A commit message for committing the built code.
+    required: true
+    default: Build the code.
+  tag:
+    description: The tag to release.
+    required: true

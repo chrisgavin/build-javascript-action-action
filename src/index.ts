@@ -28,7 +28,8 @@ async function main() {
 	}
 	let output = "";
 	await exec.exec("git", ["ls-remote", "--tags", "--quiet"], {listeners: {stdout: data => output += data.toString()}});
-	const existingTags = output.split("\n").map(line => line.split(" ").pop());
+	output = output.trimEnd();
+	const existingTags = output.split("\n").map(line => line.split("\t").pop());
 	if (existingTags.includes(`refs/tags/${inputs.get().tag}`)) {
 		throw `Tag ${inputs.get().tag} already exists.`;
 	}

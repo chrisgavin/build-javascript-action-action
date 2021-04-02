@@ -26,7 +26,13 @@ async function main() {
 	for (const tag of targetTags) {
 		await exec.exec("git", ["tag", "--force", tag]);
 	}
+	let output = "";
+	await exec.exec("git", ["ls-remote", "--tags", "--quiet"], {listeners: {stdout: data => output += data.toString()}});
+	const existingTags = output.split("\n").map(line => line.split(" ").pop());
+	if (existingTags.includes(`refs/tags/${inputs.get().tag}`)) {
+		throw `Tag ${inputs.get().tag} already exists.`;
+	}
 	await exec.exec("git", ["push", "--force", "origin"].concat(targetTags.map(tag => `refs/tags/${tag}`)));
 }
 
-main().catch(error => core.setFailed(error.stack));
+main().catch(error => core.setFailed(error.stack || error));

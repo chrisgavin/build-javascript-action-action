@@ -23,7 +23,7 @@ inputs:
   commit-author-email:
     description: The author email address of the commit with the built code.
     required: true
-    default: actions@users.noreply.github.com
+    default: github-actions[bot]@users.noreply.github.com
   commit-message:
     description: A commit message for committing the built code.
     required: true

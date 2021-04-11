@@ -3,6 +3,7 @@
 const childProcess = require("child_process");
 const fs = require("fs");
 
+process.chdir(__dirname);
 const target = "./build/index.js";
 try {
 	if (!fs.existsSync(target)) {

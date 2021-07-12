@@ -15,7 +15,7 @@
 		"source-map-support": "^0.5.19"
 	},
 	"devDependencies": {
-		"@tsconfig/node12": "^1.0.7",
+		"@tsconfig/node12": "^1.0.9",
 		"@types/jest": "^26.0.23",
 		"@types/source-map-support": "^0.5.3",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",

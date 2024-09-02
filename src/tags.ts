@@ -1,4 +1,4 @@
-import * as inputs from "./inputs";
+import * as inputs from "./inputs.js";
 
 const SEPARATOR = ".";
 

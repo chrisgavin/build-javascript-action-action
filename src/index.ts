@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import * as exec from "@actions/exec";
-import * as inputs from "./inputs";
-import * as tags from "./tags";
+import * as inputs from "./inputs.js";
+import * as tags from "./tags.js";
 import sourceMapSupport from "source-map-support";
 
 async function main() {

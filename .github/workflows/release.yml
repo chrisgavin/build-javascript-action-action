@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Prepare NodeJS
-        uses: chrisgavin/nodejs-prepare-action@ad1173efb5068a13f8732a5b20d56c73015cdedc
+        uses: chrisgavin/nodejs-prepare-action@7b5f9b248f3bfec14724678b20b97d027a879917 # 0.0.6
       - name: Install Dependencies
         run: npm ci
       - name: Create the Release

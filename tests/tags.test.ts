@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import * as tags from "./../src/tags";
 
 describe("test expandTargetTags(...)", () => {
